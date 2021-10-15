@@ -18,7 +18,7 @@ export default class App extends Component {
             number
         })
 
-        this.state.contacts.find(contact => contact.name.toLowerCase() === addContact.name.toLowerCase()) ? alert(`${name} is already in contacts`) : this.setState(({ contacts }) => ({
+        this.state.contacts.some(contact => contact.name.toLowerCase() === addContact.name.toLowerCase()) ? alert(`${name} is already in contacts`) : this.setState(({ contacts }) => ({
             contacts: [addContact, ...contacts]
         }))
 
